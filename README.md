@@ -4,7 +4,8 @@
 
 ###Jason Caldwell, Rosanne Ussery, Alex Perez
 
-Incorporate: Communication!!! Work Coordination! Everyone touches everything!
+Incorporate: Communication!!! Work Coordination! Everyone touches everything! Huzzah!
+
 
 Presidents Slide Show
 
