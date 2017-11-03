@@ -9,8 +9,4 @@ List<PresidentDAO> getAllPresidents();
 
 	Presidents getPresByTerm(int term);
 	
-	
-	
-	
-	//add product to inventory later
 }

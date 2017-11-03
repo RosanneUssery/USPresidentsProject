@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.skilldistillery.cart.data.Product;
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
 import com.skilldistillery.presidents.data.Presidents;
@@ -26,23 +25,21 @@ public class PresidentServlet extends HttpServlet {
      */
     public PresidentServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
 
 	private PresidentDAO dao = new PresidentDAOImpl();
 
-	// private Cart cart;
 
 	public void init() {
 		dao = new PresidentDAOImpl();
-		// cart = new Cart();
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		
 		try {
 			if (prod != null) {
@@ -65,6 +62,7 @@ public class PresidentServlet extends HttpServlet {
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
 		
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -72,7 +70,6 @@ public class PresidentServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
