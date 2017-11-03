@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>US Presidents</title>
 </head>
 <body>
+
+<form action="selectPres.do">
+
+</form>
+
 
 </body>
 </html>
