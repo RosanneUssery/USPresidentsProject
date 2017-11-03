@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.skilldistillery.cart.data.Cart;
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
 import com.skilldistillery.presidents.data.Presidents;
@@ -40,15 +42,19 @@ public class PresidentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
+		Presidents president = (Presidents) session.getAttribute("presidents");
+		/*if (president == null) {
+			president = new Presidents(0, null, null, null, 0, null, null);
+			session.setAttribute("presidents", president);
+		}
+		*/
 		
+		String pres = request.getParameter("pres");
 		try {
-			if (prod != null) {
-				long upc = Long.parseLong(prod);
-				Product p = dao.getProductByUPC(upc);
-				if (p != null) {
-					cart.add(p);
-					request.setAttribute("product", p);
-				}
+			if (pres != null) {
+				int term = Integer.parseInt(pres);
+				PresidentDAO p = (PresidentDAO) dao.getPresByTerm(term);
 			}
 		}
 		/* result = p.toString() + " added to cart"; */
@@ -56,7 +62,7 @@ public class PresidentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		List<PresidentDAO> pres = dao.getAllPresidents();
+		List<PresidentDAO> president = dao.getAllPresidents();
 		request.setAttribute("president", pres);
 		
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
