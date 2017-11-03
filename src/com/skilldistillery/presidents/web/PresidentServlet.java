@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.skilldistillery.cart.data.Cart;
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
 import com.skilldistillery.presidents.data.Presidents;
@@ -42,9 +41,9 @@ public class PresidentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		HttpSession session = request.getSession();
+		/*HttpSession session = request.getSession();
 		Presidents president = (Presidents) session.getAttribute("presidents");
-		/*if (president == null) {
+		if (president == null) {
 			president = new Presidents(0, null, null, null, 0, null, null);
 			session.setAttribute("presidents", president);
 		}
@@ -57,13 +56,12 @@ public class PresidentServlet extends HttpServlet {
 				PresidentDAO p = (PresidentDAO) dao.getPresByTerm(term);
 			}
 		}
-		/* result = p.toString() + " added to cart"; */
 		catch (NumberFormatException e) {
 			e.printStackTrace();
 		}
 
-		List<PresidentDAO> president = dao.getAllPresidents();
-		request.setAttribute("president", pres);
+		List<PresidentDAO> presidential = dao.getAllPresidents();
+		request.setAttribute("president", presidential);
 		
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
