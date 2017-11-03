@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import com.skilldistillery.presidents.data.PresidentDAO;
+import com.skilldistillery.presidents.data.PresidentDAOImpl;
+
 /**
  * Servlet implementation class PresidentServlet
  */
@@ -21,6 +25,16 @@ public class PresidentServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+
+	private PresidentDAO dao = new PresidentDAOImpl();
+
+	// private Cart cart;
+
+	public void init() {
+		dao = new PresidentDAOImpl();
+		// cart = new Cart();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
