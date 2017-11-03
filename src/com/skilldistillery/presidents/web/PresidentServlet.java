@@ -1,15 +1,18 @@
 package com.skilldistillery.presidents.web;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.skilldistillery.cart.data.Product;
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
+import com.skilldistillery.presidents.data.Presidents;
 
 /**
  * Servlet implementation class PresidentServlet
@@ -40,7 +43,28 @@ public class PresidentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		try {
+			if (prod != null) {
+				long upc = Long.parseLong(prod);
+				Product p = dao.getProductByUPC(upc);
+				if (p != null) {
+					cart.add(p);
+					request.setAttribute("product", p);
+				}
+			}
+		}
+		/* result = p.toString() + " added to cart"; */
+		catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+
+		List<PresidentDAO> pres = dao.getAllPresidents();
+		request.setAttribute("president", pres);
+		
+		request.getRequestDispatcher("/pres.jsp").forward(request, response);
+		
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
