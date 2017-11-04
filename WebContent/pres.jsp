@@ -11,7 +11,6 @@
 
 <form action="selectPres.do" method="get">
 <select name="president">
-
 </select>
 </form>
 

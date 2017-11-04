@@ -14,7 +14,7 @@ import javax.servlet.ServletContext;
 
 
 public class PresidentDAOImpl implements PresidentDAO{
-	private static final String filename = "WEB-INF/presidents.numbers";
+	private static final String filename = "WEB-INF/presidentsshort.txt";
 	private ServletContext servletContext;
 	private List<President> presidents;
 	
