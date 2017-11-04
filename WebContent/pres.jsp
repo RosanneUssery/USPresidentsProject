@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -26,11 +27,7 @@
 
 	<div class="parallax">
 		<!-- Image of WH goes here and title will scroll over it. -->
-
 	</div>
-
-
-
 
 	<!--  input form box -->
 	<form action="selectPresident.do" method="post">
@@ -38,7 +35,7 @@
 		<input type="submit" value="submit">
 	</form>
 
-	<%-- <c:if test="${not empty pres }"> --%>
+
 	Term: ${president.termNumber} Name: ${president.firstName}
 	${president.middleName} ${president.lastName}
 	<br> Term Start: ${president.termStart} Term End:
@@ -47,8 +44,9 @@
 	${president.party} Interesting Fact: ${president.funFact}
 	<br>
 	<img src="${president.imageLocation}" />
-	<%-- </c:if> --%>
 
+
+	<c:set var="term" value="${(empty term) ? '1' : president.termNumber}" />
 	<form action="button.do" method="post">
 		<button class=button name="term" value="${president.termNumber + 1}">next</button>
 	</form>
@@ -56,7 +54,6 @@
 	<form action="button.do" method="post">
 		<button class=button name="term" value="${president.termNumber - 1}">previous</button>
 	</form>
-
 
 </body>
 </html>

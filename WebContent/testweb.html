@@ -25,12 +25,12 @@
 <body>
 
 	<div class="parallax">
-		<!-- Image of WH goes here and title will scroll over it. -->
+		Image of WH goes here and title will scroll over it.
 
 	</div>
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
+		Indicators
 		<ol class="carousel-indicators">
 		<c:forEach items="$[president.termNumber]" var="term"> 
 			<li data-target="#myCarousel" data-slide-to="${president.termNumber}" class="active"></li>
@@ -39,7 +39,7 @@
 			</c:forEach>
 		</ol>
 
-		<!-- Wrapper for slides -->
+		Wrapper for slides
 		<div class="carousel-inner">
 			<div class="item active">
 				Term: ${president.termNumber} Name: ${president.firstName}
@@ -61,7 +61,7 @@
     </div>
 		</div>
 
-		<!-- Left and right controls -->
+		Left and right controls
 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left"></span> <span
 			class="sr-only">Previous</span>
@@ -73,7 +73,7 @@
 	</div>
 
 
-	<!--  input form box -->
+	 input form box
 	<form action="selectPresident.do" method="post">
 		<input type="text" name="term"> <input type="submit"
 			value="submit">
