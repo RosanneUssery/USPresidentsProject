@@ -13,39 +13,53 @@ public class President {
 	  private int electionsWon;
 	  private String whyLeftOffice;
 	  private String party;
+	  private String funFact;
+//	  private String imageLocation;
 	  
-	  public Period getTermLength() {
+	  
+	  // Can use this constructor if we add the image location to the file
+//	  public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
+//			LocalDate termEnd, int electionsWon, String whyLeftOffice, String party, String funFact,
+//			String imageLocation) {
+//		super();
+//		this.termNumber = termNumber;
+//		this.firstName = firstName;
+//		this.middleName = middleName;
+//		this.lastName = lastName;
+//		this.termStart = termStart;
+//		this.termEnd = termEnd;
+//		this.electionsWon = electionsWon;
+//		this.whyLeftOffice = whyLeftOffice;
+//		this.party = party;
+//		this.funFact = funFact;
+//		this.imageLocation = imageLocation;
+//	}
+
+
+
+	public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
+			LocalDate termEnd, int electionsWon, String whyLeftOffice, String party, String funFact) {
+		super();
+		this.termNumber = termNumber;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.termStart = termStart;
+		this.termEnd = termEnd;
+		this.electionsWon = electionsWon;
+		this.whyLeftOffice = whyLeftOffice;
+		this.party = party;
+		this.funFact = funFact;
+	}
+
+
+
+	public Period getTermLength() {
 	    Period p = null;
 	    LocalDate te = this.termEnd;
 	    if (te == null) { te = LocalDate.now(); }
 	    p = Period.between(termStart, te);
 	    return p;
-	  }
-	  
-	  public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
-	      LocalDate termEnd, int electionsWon, String whyLeftOffice, String party) {
-	    super();
-	    this.termNumber = termNumber;
-	    this.firstName = firstName;
-	    this.middleName = middleName;
-	    this.lastName = lastName;
-	    this.termStart = termStart;
-	    this.termEnd = termEnd;
-	    this.electionsWon = electionsWon;
-	    this.whyLeftOffice = whyLeftOffice;
-	    this.party = party;
-	  }
-
-	  public President(int termNumber, String firstName, String middleName, String lastName, int electionsWon,
-	      String reasonLeftOffice, String party) {
-	    super();
-	    this.termNumber = termNumber;
-	    this.firstName = firstName;
-	    this.middleName = middleName;
-	    this.lastName = lastName;
-	    this.electionsWon = electionsWon;
-	    this.whyLeftOffice = reasonLeftOffice;
-	    this.party = party;
 	  }
 
 	  public int getTermNumber() {
@@ -134,16 +148,6 @@ public class President {
 	    return builder.toString();
 	  }
 
-	/*  @Override
-	  public int compareTo(Presidents other) {
-	    if (this.termNumber > other.termNumber) {
-	      return 1;
-	    } else if (this.termNumber < other.termNumber) {
-	      return -1;
-	    }
-	    return 0;
-	  }*/
-
 	public LocalDate getTermStart() {
 	    return termStart;
 	}
@@ -158,6 +162,17 @@ public class President {
 
 	public void setTermEnd(LocalDate termEnd) {
 	    this.termEnd = termEnd;
+	}
+
+
+
+	public String getFunFact() {
+		return funFact;
+	}
+
+
+	public void setFunFact(String funFact) {
+		this.funFact = funFact;
 	}
 
 }
