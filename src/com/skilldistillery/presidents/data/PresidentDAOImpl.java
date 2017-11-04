@@ -32,7 +32,6 @@ public class PresidentDAOImpl implements PresidentDAO{
 
 	public void getPresidentsList(){
         InputStream is = servletContext.getResourceAsStream(filename);
-        FileReader f;
         BufferedReader r = null;
         try {
             r = new BufferedReader(new InputStreamReader(is));
@@ -43,21 +42,21 @@ public class PresidentDAOImpl implements PresidentDAO{
                 String firstName = presidentData[1].trim();
                 String middleName = presidentData[2].trim();
                 String lastName = presidentData[3].trim();
-                String start = presidentData[4].trim();
-                String end = presidentData[5].trim();
-                String won = presidentData[6].trim();
-                String left = presidentData[7].trim();
-                String party = presidentData[8].trim();
-                String funFact = presidentData[9].trim();
+//                String start = presidentData[4].trim();
+//                String end = presidentData[5].trim();
+//                String won = presidentData[6].trim();
+//                String left = presidentData[7].trim();
+//                String party = presidentData[8].trim();
+//                String funFact = presidentData[9].trim();
 //                String imageLocation = presidentData[10].trim();
                 
                 //parse Strings above to correct type
                 int termNumAsInt = Integer.parseInt(termNum);
-                LocalDate inagurated = LocalDate.parse(start);
-                LocalDate leftOffice = LocalDate.parse(end);
-                int electionsWon = Integer.parseInt(won);
+//                LocalDate inagurated = LocalDate.parse(start);
+//                LocalDate leftOffice = LocalDate.parse(end);
+//                int electionsWon = Integer.parseInt(won);
                 
-                President p = new President(termNumAsInt, firstName, middleName, lastName, inagurated, leftOffice, electionsWon, left, party, funFact);
+                President p = new President(termNumAsInt, firstName, middleName, lastName);
                 presidents.add(p);
             }
         } catch (FileNotFoundException e) {
@@ -82,21 +81,15 @@ public class PresidentDAOImpl implements PresidentDAO{
     }
 
 	@Override
-	public String getPresByTerm(int term) {
-		String result = "";
-		for (President president : presidents) {
-			if(term == president.getTermNumber() ) {
-				result = president.getFirstName()+ " " +president.getMiddleName()+ " "+president.getLastName();
-			}
-		}
-		return result;
+	public President getPresByTerm(int term) {
+		return presidents.get(term-1);
+//		String result = "";
+//		for (President president : presidents) {
+//			if(term == president.getTermNumber() ) {
+//				result = president.getFirstName()+ " " +president.getMiddleName()+ " "+president.getLastName();
+//			}
+//		}
+//		return result;
 	}
 
-	/*@Override
-	public President getPresByTerm(int term) {
-		int term = presidents.getAllPresidents();
-		// return president by term entered
-		return term;
-	}
-*/
 }

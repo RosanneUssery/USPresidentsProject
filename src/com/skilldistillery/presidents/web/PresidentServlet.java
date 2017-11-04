@@ -3,6 +3,7 @@ package com.skilldistillery.presidents.web;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,22 +13,29 @@ import com.skilldistillery.presidents.data.President;
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
 
+
 /**
  * Servlet implementation class PresidentServlet
  */
 
 public class PresidentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private PresidentDAO presDAO;
+	
+	@Override
+	public void init() throws ServletException {
+		System.out.println("In init() method");
+		presDAO = new PresidentDAOImpl(getServletContext());
+	}
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public PresidentServlet() {
-        super();
-    }
+//    /**
+//     * @see HttpServlet#HttpServlet()
+//     */
+//    public PresidentServlet() {
+//        super();
+//    }
     
-
-	private PresidentDAO dao = new PresidentDAOImpl(this.getServletContext());
+//	PresidentDAOImpl dao = new PresidentDAOImpl(getServletContext());
 
 
 	/*public void init() {
@@ -40,10 +48,10 @@ public class PresidentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String term = request.getParameter("term");
 		int termNumAsInt = Integer.parseInt(term);
-		String pres = dao.getPresByTerm(termNumAsInt);
+		President pres = presDAO.getPresByTerm(termNumAsInt);
 		
-			request.setAttribute("president", pres);
-			request.getRequestDispatcher("/request.jsp").forward(request, response);
+		request.setAttribute("president", pres);
+		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
 		/*HttpSession session = request.getSession();
 		Presidents president = (Presidents) session.getAttribute("presidents");

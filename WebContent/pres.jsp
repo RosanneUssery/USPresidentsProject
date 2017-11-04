@@ -17,8 +17,10 @@
 	
 		<input type="submit" value="submit">
 	</form>
-Term: ${president.term}
-Name: ${president.name}
+Term: ${president.termNumber}
+Name: ${president.firstName}
+${president.middleName}
+${president.lastName}
 <!-- </select>
 </form> -->
 

@@ -6,6 +6,6 @@ import java.util.List;
 public interface PresidentDAO {
 
 List<President> getAllPresidents();
-	String getPresByTerm(int term);
+	President getPresByTerm(int term);
 	
 }
