@@ -20,7 +20,14 @@
 Term: ${president.termNumber}
 Name: ${president.firstName}
 ${president.middleName}
-${president.lastName}
+${president.lastName} <br>
+Term Start: ${president.termStart}
+Term End: ${president.termEnd}
+Number of Elections Won: ${president.electionsWon}
+Reasons Left Office: ${president.whyLeftOffice}
+Political Party: ${president.party}
+Interesting Fact: ${president.funFact} <br>
+<img src="${president.imageLocation}"/>
 <!-- </select>
 </form> -->
 

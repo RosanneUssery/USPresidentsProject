@@ -14,26 +14,26 @@ public class President {
 	  private String whyLeftOffice;
 	  private String party;
 	  private String funFact;
-//	  private String imageLocation;
+	  private String imageLocation;
 	  
 	  
 	  // Can use this constructor if we add the image location to the file
-//	  public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
-//			LocalDate termEnd, int electionsWon, String whyLeftOffice, String party, String funFact,
-//			String imageLocation) {
-//		super();
-//		this.termNumber = termNumber;
-//		this.firstName = firstName;
-//		this.middleName = middleName;
-//		this.lastName = lastName;
-//		this.termStart = termStart;
-//		this.termEnd = termEnd;
-//		this.electionsWon = electionsWon;
-//		this.whyLeftOffice = whyLeftOffice;
-//		this.party = party;
-//		this.funFact = funFact;
-//		this.imageLocation = imageLocation;
-//	}
+	  public President(int termNumber, String firstName, String middleName, String lastName, String termStart,
+			String termEnd, int electionsWon, String whyLeftOffice, String party, String funFact,
+			String imageLocation) {
+		super();
+		this.termNumber = termNumber;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.termStart = termStart;
+		this.termEnd = termEnd;
+		this.electionsWon = electionsWon;
+		this.whyLeftOffice = whyLeftOffice;
+		this.party = party;
+		this.funFact = funFact;
+		this.imageLocation = imageLocation;
+	}
 
 
 
@@ -93,29 +93,29 @@ public class President {
 		this.lastName = lastName;
 	}
 
-//	  public int getElectionsWon() {
-//	    return electionsWon;
-//	  }
-//
-//	  public void setElectionsWon(int electionsWon) {
-//	    this.electionsWon = electionsWon;
-//	  }
-//
-//	  public String getWhyLeftOffice() {
-//	    return whyLeftOffice;
-//	  }
-//
-//	  public void setWhyLeftOffice(String reasonLeftOffice) {
-//	    this.whyLeftOffice = reasonLeftOffice;
-//	  }
-//
-//	  public String getParty() {
-//	    return party;
-//	  }
-//
-//	  public void setParty(String party) {
-//	    this.party = party;
-//	  }
+	  public int getElectionsWon() {
+	    return electionsWon;
+	  }
+
+	  public void setElectionsWon(int electionsWon) {
+	    this.electionsWon = electionsWon;
+	  }
+
+	  public String getWhyLeftOffice() {
+	    return whyLeftOffice;
+	  }
+
+	  public void setWhyLeftOffice(String reasonLeftOffice) {
+	    this.whyLeftOffice = reasonLeftOffice;
+	  }
+
+	  public String getParty() {
+	    return party;
+	  }
+
+	  public void setParty(String party) {
+	    this.party = party;
+	  }
 
 //	  @Override
 //	  public String toString() {
@@ -146,33 +146,45 @@ public class President {
 //	    builder.append(whyLeftOffice);
 //	    return builder.toString();
 //	  }
-//
-//	public LocalDate getTermStart() {
-//	    return termStart;
-//	}
-//
-//	public void setTermStart(LocalDate termStart) {
-//	    this.termStart = termStart;
-//	}
-//
-//	public LocalDate getTermEnd() {
-//	    return termEnd;
-//	}
-//
-//	public void setTermEnd(LocalDate termEnd) {
-//	    this.termEnd = termEnd;
-//	}
-//
-//
-//
-//	public String getFunFact() {
-//		return funFact;
-//	}
-//
-//
-//	public void setFunFact(String funFact) {
-//		this.funFact = funFact;
-//	}
+
+	public String getTermStart() {
+	    return termStart;
+	}
+
+	public void setTermStart(String termStart) {
+	    this.termStart = termStart;
+	}
+
+	public String getTermEnd() {
+	    return termEnd;
+	}
+
+	public void setTermEnd(String termEnd) {
+	    this.termEnd = termEnd;
+	}
+
+
+
+	public String getFunFact() {
+		return funFact;
+	}
+
+
+	public void setFunFact(String funFact) {
+		this.funFact = funFact;
+	}
+
+
+
+	public String getImageLocation() {
+		return imageLocation;
+	}
+
+
+
+	public void setImageLocation(String imageLocation) {
+		this.imageLocation = imageLocation;
+	}
 
 }
 

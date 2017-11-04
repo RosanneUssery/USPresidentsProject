@@ -14,7 +14,7 @@ import javax.servlet.ServletContext;
 
 
 public class PresidentDAOImpl implements PresidentDAO{
-	private static final String filename = "WEB-INF/presidentstabs.txt";
+	private static final String filename = "WEB-INF/presidentsimages.txt";
 	private ServletContext servletContext;
 	private List<President> presidents;
 	
@@ -48,16 +48,14 @@ public class PresidentDAOImpl implements PresidentDAO{
                 String left = presidentData[7].trim();
                 String party = presidentData[8].trim();
                 String funFact = presidentData[9].trim();
-//                String imageLocation = presidentData[10].trim();
+                String imageLocation = presidentData[10].trim();
                 
                 //parse Strings above to correct type
                 int termNumAsInt = Integer.parseInt(termNum);
-//                LocalDate inagurated = LocalDate.parse(start);
-//                LocalDate leftOffice = LocalDate.parse(end);
                 int electionsWon = Integer.parseInt(won);
                 
 //                President p = new President(termNumAsInt, firstName, middleName, lastName);
-                President p = new President(termNumAsInt, firstName, middleName, lastName, start, end, electionsWon, left, party, funFact);
+                President p = new President(termNumAsInt, firstName, middleName, lastName, start, end, electionsWon, left, party, funFact, imageLocation);
                 presidents.add(p);
             }
         } catch (FileNotFoundException e) {
