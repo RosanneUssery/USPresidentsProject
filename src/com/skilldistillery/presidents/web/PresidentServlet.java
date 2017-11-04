@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.skilldistillery.presidents.data.PresidentDAO;
 import com.skilldistillery.presidents.data.PresidentDAOImpl;
-import com.skilldistillery.presidents.data.Presidents;
+import com.skilldistillery.presidents.data.President;
 
 /**
  * Servlet implementation class PresidentServlet
