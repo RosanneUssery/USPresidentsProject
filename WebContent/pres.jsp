@@ -50,7 +50,11 @@
 	<%-- </c:if> --%>
 
 	<form action="button.do" method="post">
-	<button class=button name="term" value="${president.termNumber + 1}">next</button>
+		<button class=button name="term" value="${president.termNumber + 1}">next</button>
+	</form>
+	
+	<form action="button.do" method="post">
+		<button class=button name="term" value="${president.termNumber - 1}">previous</button>
 	</form>
 
 
