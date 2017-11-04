@@ -8,12 +8,12 @@ public class President {
 	  private String firstName;
 	  private String middleName;
 	  private String lastName;
-//	  private LocalDate termStart;
-//	  private LocalDate termEnd;
-//	  private int electionsWon;
-//	  private String whyLeftOffice;
-//	  private String party;
-//	  private String funFact;
+	  private String termStart;
+	  private String termEnd;
+	  private int electionsWon;
+	  private String whyLeftOffice;
+	  private String party;
+	  private String funFact;
 //	  private String imageLocation;
 	  
 	  
@@ -37,30 +37,21 @@ public class President {
 
 
 
-//	public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
-//			LocalDate termEnd, int electionsWon, String whyLeftOffice, String party, String funFact) {
-//		super();
-//		this.termNumber = termNumber;
-//		this.firstName = firstName;
-//		this.middleName = middleName;
-//		this.lastName = lastName;
-//		this.termStart = termStart;
-//		this.termEnd = termEnd;
-//		this.electionsWon = electionsWon;
-//		this.whyLeftOffice = whyLeftOffice;
-//		this.party = party;
-//		this.funFact = funFact;
-//	}
-//
-//
-//
-//	public Period getTermLength() {
-//	    Period p = null;
-//	    LocalDate te = this.termEnd;
-//	    if (te == null) { te = LocalDate.now(); }
-//	    p = Period.between(termStart, te);
-//	    return p;
-//	  }
+	public President(int termNumber, String firstName, String middleName, String lastName, String termStart,
+			String termEnd, int electionsWon, String whyLeftOffice, String party, String funFact) {
+		super();
+		this.termNumber = termNumber;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.termStart = termStart;
+		this.termEnd = termEnd;
+		this.electionsWon = electionsWon;
+		this.whyLeftOffice = whyLeftOffice;
+		this.party = party;
+		this.funFact = funFact;
+	}
+
 
 	  public int getTermNumber() {
 	    return termNumber;
