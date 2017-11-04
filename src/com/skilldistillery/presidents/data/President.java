@@ -3,9 +3,7 @@ package com.skilldistillery.presidents.data;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Presidents {
-
-
+public class President {
 	  private int termNumber;
 	  private String firstName;
 	  private String middleName;
@@ -24,7 +22,7 @@ public class Presidents {
 	    return p;
 	  }
 	  
-	  public Presidents(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
+	  public President(int termNumber, String firstName, String middleName, String lastName, LocalDate termStart,
 	      LocalDate termEnd, int electionsWon, String whyLeftOffice, String party) {
 	    super();
 	    this.termNumber = termNumber;
@@ -38,7 +36,7 @@ public class Presidents {
 	    this.party = party;
 	  }
 
-	  public Presidents(int termNumber, String firstName, String middleName, String lastName, int electionsWon,
+	  public President(int termNumber, String firstName, String middleName, String lastName, int electionsWon,
 	      String reasonLeftOffice, String party) {
 	    super();
 	    this.termNumber = termNumber;
