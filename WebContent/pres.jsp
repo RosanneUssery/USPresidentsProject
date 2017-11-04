@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<form action="selectPres.do">
+<form action="selectPres.do" method="get">
+<select name="president">
 
+</select>
 </form>
 
 

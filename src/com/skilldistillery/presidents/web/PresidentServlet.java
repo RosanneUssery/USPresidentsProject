@@ -29,12 +29,12 @@ public class PresidentServlet extends HttpServlet {
     }
     
 
-	private PresidentDAO dao = new PresidentDAOImpl();
+	private PresidentDAO dao = new PresidentDAOImpl(this.getServletContext());
 
 
-	public void init() {
+	/*public void init() {
 		dao = new PresidentDAOImpl();
-	}
+	}*/
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -49,7 +49,7 @@ public class PresidentServlet extends HttpServlet {
 		}
 		*/
 		
-		String pres = request.getParameter("pres");
+		String pres = request.getParameter("president");
 		try {
 			if (pres != null) {
 				int term = Integer.parseInt(pres);
@@ -60,8 +60,8 @@ public class PresidentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		List<PresidentDAO> presidential = dao.getAllPresidents();
-		request.setAttribute("president", presidential);
+		List<PresidentDAO> term = dao.getAllPresidents();
+		request.setAttribute("president", term);
 		
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
