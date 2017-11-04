@@ -82,9 +82,14 @@ public class PresidentDAOImpl implements PresidentDAO{
     }
 
 	@Override
-	public President getPresByTerm(int term) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getPresByTerm(int term) {
+		String result = "";
+		for (President president : presidents) {
+			if(term == president.getTermNumber() ) {
+				result = president.getFirstName()+ " " +president.getMiddleName()+ " "+president.getLastName();
+			}
+		}
+		return result;
 	}
 
 	/*@Override

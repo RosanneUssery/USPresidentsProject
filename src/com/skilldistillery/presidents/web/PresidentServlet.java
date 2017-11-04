@@ -40,14 +40,10 @@ public class PresidentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String term = request.getParameter("term");
 		int termNumAsInt = Integer.parseInt(term);
-		President pres = dao.getPresByTerm(termNumAsInt);
+		String pres = dao.getPresByTerm(termNumAsInt);
 		
-		if (pres != null) {
-			request.setAttribute("stock", pres);
+			request.setAttribute("president", pres);
 			request.getRequestDispatcher("/request.jsp").forward(request, response);
-		} else {
-			request.getRequestDispatcher("/error.jsp").forward(request, response);
-		}
 		
 		/*HttpSession session = request.getSession();
 		Presidents president = (Presidents) session.getAttribute("presidents");
@@ -68,16 +64,16 @@ public class PresidentServlet extends HttpServlet {
 			e.printStackTrace();
 		}*/
 
-		List<President> termp = dao.getAllPresidents();
-		request.setAttribute("term", termp);
-		List<President> lastName = dao.getAllPresidents();
-		request.setAttribute("name", lastName);
-		
-		request.getRequestDispatcher("/pres.jsp").forward(request, response);
+//		List<President> termp = dao.getAllPresidents();
+//		request.setAttribute("term", termp);
+//		List<President> lastName = dao.getAllPresidents();
+//		request.setAttribute("name", lastName);
+//		
+//		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
 		
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
