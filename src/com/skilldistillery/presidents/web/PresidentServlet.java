@@ -60,7 +60,7 @@ public class PresidentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		List<PresidentDAO> term = dao.getAllPresidents();
+		List<President> term = dao.getAllPresidents();
 		request.setAttribute("president", term);
 		
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
