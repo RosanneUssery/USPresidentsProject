@@ -76,20 +76,11 @@ public class PresidentDAOImpl implements PresidentDAO{
                 }
             }
         }
-        
-        
     }
 
 	@Override
 	public President getPresByTerm(int term) {
 		return presidents.get(term-1);
-//		String result = "";
-//		for (President president : presidents) {
-//			if(term == president.getTermNumber() ) {
-//				result = president.getFirstName()+ " " +president.getMiddleName()+ " "+president.getLastName();
-//			}
-//		}
-//		return result;
 	}
 
 }
