@@ -7,11 +7,11 @@
   </welcome-file-list>
     
     <servlet>
-    <servlet-name>PresidentsServlet</servlet-name>
-    <servlet-class>com.skilldistillery.presidents.web.PresidentsServlet</servlet-class>
+    <servlet-name>PresidentServlet</servlet-name>
+    <servlet-class>com.skilldistillery.presidents.web.PresidentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>PresidentsServlet</servlet-name>
+    <servlet-name>PresidentServlet</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
