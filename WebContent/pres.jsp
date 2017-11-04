@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,14 +10,12 @@
 </head>
 <body>
 
-<!-- form action="selectPres.do" method="get">
-<select name="term" type="number">  -->
-
-<form action="selectPresident.do" method="post">
+	<form action="selectPresident.do" method="post">
 		<input type="text" name="term"> 
-	
 		<input type="submit" value="submit">
 	</form>
+	
+<%-- <c:if test="${not empty pres }"> --%>
 Term: ${president.termNumber}
 Name: ${president.firstName}
 ${president.middleName}
@@ -28,9 +27,7 @@ Reasons Left Office: ${president.whyLeftOffice}
 Political Party: ${president.party}
 Interesting Fact: ${president.funFact} <br>
 <img src="${president.imageLocation}"/>
-<!-- </select>
-</form> -->
-
+<%-- </c:if> --%>
 
 </body>
 </html>

@@ -1,1 +1,0 @@
-1	George		Washington	"July 1, 1789"	"March 4, 1797"	2	Did not seek re-election	Independent	"Teeth made of ivory and animal teeth, not wood"	pictures/1Washington.jpg
