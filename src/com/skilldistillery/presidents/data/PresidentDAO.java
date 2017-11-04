@@ -5,8 +5,7 @@ import java.util.List;
 
 public interface PresidentDAO {
 
-List<PresidentDAO> getAllPresidents();
-
-	Presidents getPresByTerm(int term);
+List<President> getAllPresidents();
+	President getPresByTerm(int term);
 	
 }
