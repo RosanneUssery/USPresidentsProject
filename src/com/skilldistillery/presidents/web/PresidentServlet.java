@@ -37,8 +37,18 @@ public class PresidentServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String term = request.getParameter("term");
+		int termNumAsInt = Integer.parseInt(term);
+		President pres = dao.getPresByTerm(termNumAsInt);
+		
+		if (pres != null) {
+			request.setAttribute("stock", pres);
+			request.getRequestDispatcher("/request.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/error.jsp").forward(request, response);
+		}
+		
 		/*HttpSession session = request.getSession();
 		Presidents president = (Presidents) session.getAttribute("presidents");
 		if (president == null) {
@@ -47,19 +57,21 @@ public class PresidentServlet extends HttpServlet {
 		}
 		*/
 		
-		String pres = request.getParameter("president");
+		/*String president= request.getParameter("president");
 		try {
 			if (pres != null) {
-				int term = Integer.parseInt(pres);
-				PresidentDAO p = (PresidentDAO) dao.getPresByTerm(term);
+				int termp = Integer.parseInt(pres);
+				PresidentDAO p = (PresidentDAO) dao.getPresByTerm(termp);
 			}
 		}
 		catch (NumberFormatException e) {
 			e.printStackTrace();
-		}
+		}*/
 
-		List<President> term = dao.getAllPresidents();
-		request.setAttribute("president", term);
+		List<President> termp = dao.getAllPresidents();
+		request.setAttribute("term", termp);
+		List<President> lastName = dao.getAllPresidents();
+		request.setAttribute("name", lastName);
 		
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
 		
@@ -71,8 +83,8 @@ public class PresidentServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
 	}
 
 }

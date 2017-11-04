@@ -21,7 +21,7 @@ public class PresidentDAOImpl implements PresidentDAO{
 	
 	@Override
 	public List<President> getAllPresidents() {
-		return null;
+		return presidents;
 	}
 	
 	public PresidentDAOImpl(ServletContext context) {
@@ -30,7 +30,7 @@ public class PresidentDAOImpl implements PresidentDAO{
 		getPresidentsList();
 	}
 
-	public List<President> getPresidentsList(){
+	public void getPresidentsList(){
         InputStream is = servletContext.getResourceAsStream(filename);
         FileReader f;
         BufferedReader r = null;
@@ -78,13 +78,20 @@ public class PresidentDAOImpl implements PresidentDAO{
             }
         }
         
-        return presidents;
+        
     }
 
 	@Override
 	public President getPresByTerm(int term) {
-		// return president by term entered
+		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/*@Override
+	public President getPresByTerm(int term) {
+		int term = presidents.getAllPresidents();
+		// return president by term entered
+		return term;
+	}
+*/
 }

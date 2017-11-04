@@ -9,10 +9,18 @@
 </head>
 <body>
 
-<form action="selectPres.do" method="get">
-<select name="president">
-</select>
-</form>
+<!-- form action="selectPres.do" method="get">
+<select name="term" type="number">  -->
+
+<form action="selectPresident.do" method="post">
+		<input type="text" name="term"> 
+	
+		<input type="submit" value="submit">
+	</form>
+Term: ${president.term}
+Name: ${president.name}
+<!-- </select>
+</form> -->
 
 
 </body>
