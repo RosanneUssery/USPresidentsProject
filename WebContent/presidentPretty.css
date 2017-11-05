@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body, html {
+	height: 100%;
+}
 
 /* this will be the image of the white house, with the scrolly over that */
 .parallax {
@@ -26,7 +29,38 @@
 	border-radius: 25%;
 }
 
+.headBar {
+	position: inherit;
+	width: inherit;
+	height: 85px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
 img {
 	border-radius: 100%;
 	position: center;
+	height: 500px;
+}
+
+#wrapper {
+
+  background-image: url("pictures/blank-parchment-aps.jpg");
+  height: 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#content {
+  float: left;
+}
+#sidebar {
+  float: right;
+}
+#cleared {
+  clear: both;
 }
