@@ -30,43 +30,44 @@
 	
 		<!--  input form box -->
 		<form action="selectPresident.do" method="post">
+			<h4>Enter a presidents term number (1-45) to see information about that president.</h4>
 			<input type="number" name="term" min="1" max="45" step="1" value="${president.termNumber}"> 
 			<input type="submit" value="submit">
 		</form>
 		
-		<%-- <c:if test="${value}"> --%>
-		Term: ${president.termNumber} Name: ${president.firstName}
-		${president.middleName} ${president.lastName}
-		<br> 
-		Term Start: ${president.termStart} Term End:
-		${president.termEnd} Number of Elections Won: ${president.electionsWon}
-		Reasons Left Office: ${president.whyLeftOffice} Political Party:
-		${president.party} Interesting Fact: ${president.funFact}
-		<br>
-		<img src="${president.imageLocation}" />
-		<%-- </c:if> --%>
+		<c:if test="${not empty president.termNumber}">
+			<img src="${president.imageLocation}" />
+			<br>
+			Term: ${president.termNumber} Name: ${president.firstName}
+			${president.middleName} ${president.lastName}
+			<br> 
+			Term Start: ${president.termStart} Term End:
+			${president.termEnd} Number of Elections Won: ${president.electionsWon}
+			Reasons Left Office: ${president.whyLeftOffice} Political Party:
+			${president.party} Interesting Fact: ${president.funFact}
 	
-		<form action="button.do" method="post">
-			<c:choose>
-			<c:when test="${president.termNumber == 45}">
-			<button class=button name="term" value="${president.termNumber - 44}">next</button>
-			</c:when>
-			<c:otherwise>
-			<button class=button name="term" value="${president.termNumber + 1}">next</button>
-			</c:otherwise>
-			</c:choose>
-		</form>
-	
-		<form action="button.do" method="post">
-			<c:choose>
-			<c:when test="${president.termNumber == 1}">
-			<button class=button name="term" value="${president.termNumber + 44}">previous</button>
-			</c:when>
-			<c:otherwise>
-			<button class=button name="term" value="${president.termNumber - 1}">previous</button>
-			</c:otherwise>
-			</c:choose>
-		</form>
+			<form action="button.do" method="post">
+				<c:choose>
+				<c:when test="${president.termNumber == 45}">
+				<button class=button name="term" value="${president.termNumber - 44}">next</button>
+				</c:when>
+				<c:otherwise>
+				<button class=button name="term" value="${president.termNumber + 1}">next</button>
+				</c:otherwise>
+				</c:choose>
+			</form>
+		
+			<form action="button.do" method="post">
+				<c:choose>
+				<c:when test="${president.termNumber == 1}">
+				<button class=button name="term" value="${president.termNumber + 44}">previous</button>
+				</c:when>
+				<c:otherwise>
+				<button class=button name="term" value="${president.termNumber - 1}">previous</button>
+				</c:otherwise>
+				</c:choose>
+			</form>
+		</c:if>
 	
 	</body>
 </html>
