@@ -26,8 +26,6 @@ public class PresidentServlet extends HttpServlet {
 		
 		request.setAttribute("president", pres);
 		request.getRequestDispatcher("/pres.jsp").forward(request, response);
-		
-		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

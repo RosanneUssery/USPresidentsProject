@@ -18,7 +18,6 @@ public class PresidentDAOImpl implements PresidentDAO{
 	private ServletContext servletContext;
 	private List<President> presidents;
 	
-	
 	@Override
 	public List<President> getAllPresidents() {
 		return presidents;
@@ -54,7 +53,7 @@ public class PresidentDAOImpl implements PresidentDAO{
                 int termNumAsInt = Integer.parseInt(termNum);
                 int electionsWon = Integer.parseInt(won);
                 
-//                President p = new President(termNumAsInt, firstName, middleName, lastName);
+                // Full data file
                 President p = new President(termNumAsInt, firstName, middleName, lastName, start, end, electionsWon, left, party, funFact, imageLocation);
                 presidents.add(p);
             }

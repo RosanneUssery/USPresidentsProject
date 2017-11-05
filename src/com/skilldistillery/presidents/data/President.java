@@ -1,8 +1,5 @@
 package com.skilldistillery.presidents.data;
 
-import java.time.LocalDate;
-import java.time.Period;
-
 public class President {
 	  private int termNumber;
 	  private String firstName;
@@ -15,7 +12,6 @@ public class President {
 	  private String party;
 	  private String funFact;
 	  private String imageLocation;
-	  
 	  
 	  // Can use this constructor if we add the image location to the file
 	  public President(int termNumber, String firstName, String middleName, String lastName, String termStart,
@@ -34,8 +30,6 @@ public class President {
 		this.funFact = funFact;
 		this.imageLocation = imageLocation;
 	}
-
-
 
 	public President(int termNumber, String firstName, String middleName, String lastName, String termStart,
 			String termEnd, int electionsWon, String whyLeftOffice, String party, String funFact) {
@@ -117,36 +111,6 @@ public class President {
 	    this.party = party;
 	  }
 
-//	  @Override
-//	  public String toString() {
-//	    StringBuilder builder = new StringBuilder();
-//	    builder.append(termNumber + ": ");
-//	    builder.append(firstName + " ");
-//	    if (middleName.length() > 0) {
-//	      builder.append(middleName + " ");
-//	    }
-//	    builder.append(lastName);
-//	    builder.append(" (" + party + ")");
-//	    builder.append(", ");
-//	    builder.append(termStart);
-//	    builder.append("-");
-//	    builder.append(termEnd);
-//	    builder.append(" (term length: ");
-//	    builder.append(this.getTermLength());
-//	    builder.append(" ");
-//	    builder.append(this.getTermLength().getYears());
-//	    builder.append(" yrs,");
-//	    builder.append(this.getTermLength().getMonths());
-//	    builder.append(" mos,");
-//	    builder.append(this.getTermLength().getDays());
-//	    builder.append(" days)");
-//	    builder.append(", electionsWon=");
-//	    builder.append(electionsWon);
-//	    builder.append(", whyLeftOffice=");
-//	    builder.append(whyLeftOffice);
-//	    return builder.toString();
-//	  }
-
 	public String getTermStart() {
 	    return termStart;
 	}
@@ -163,28 +127,20 @@ public class President {
 	    this.termEnd = termEnd;
 	}
 
-
-
 	public String getFunFact() {
 		return funFact;
 	}
-
 
 	public void setFunFact(String funFact) {
 		this.funFact = funFact;
 	}
 
-
-
 	public String getImageLocation() {
 		return imageLocation;
 	}
 
-
-
 	public void setImageLocation(String imageLocation) {
 		this.imageLocation = imageLocation;
 	}
-
 }
 

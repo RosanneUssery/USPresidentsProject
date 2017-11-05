@@ -46,14 +46,20 @@
 	<img src="${president.imageLocation}" />
 
 
-	<c:set var="term" value="${(empty term) ? '1' : president.termNumber}" />
+<%-- 	<c:if var="term" value="${(empty term) ? '1' : president.termNumber}" /> --%>
+	
+	
 	<form action="button.do" method="post">
 		<button class=button name="term" value="${president.termNumber + 1}">next</button>
 	</form>
 	
+	<c:if test=""></c:if>
+	
+	<c:if test="${iTerm} != 0">
 	<form action="button.do" method="post">
 		<button class=button name="term" value="${president.termNumber - 1}">previous</button>
 	</form>
+	</c:if>
 
 </body>
 </html>
