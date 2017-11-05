@@ -30,7 +30,8 @@
 	
 		<!--  input form box -->
 		<form action="selectPresident.do" method="post">
-			<input type="text" name="term"> <input type="submit" value="submit">
+			<input type="number" name="term" min="1" max="45" step="1" value="${president.termNumber}"> 
+			<input type="submit" value="submit">
 		</form>
 	
 		Term: ${president.termNumber} Name: ${president.firstName}
