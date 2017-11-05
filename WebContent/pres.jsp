@@ -33,7 +33,8 @@
 			<input type="number" name="term" min="1" max="45" step="1" value="${president.termNumber}"> 
 			<input type="submit" value="submit">
 		</form>
-	
+		
+		<%-- <c:if test="${value}"> --%>
 		Term: ${president.termNumber} Name: ${president.firstName}
 		${president.middleName} ${president.lastName}
 		<br> 
@@ -43,18 +44,29 @@
 		${president.party} Interesting Fact: ${president.funFact}
 		<br>
 		<img src="${president.imageLocation}" />
-	
-		<%-- Need to add <c:if test=""></c:if> to disable next if on last pres --%>
-		<form action="button.do" method="post">
-			<button class=button name="term" value="${president.termNumber + 1}">next</button>
-		</form>
-	
-		<%-- <c:if test="${iTerm} != 0"> --%>
-		<%-- Need to add <c:if test=""></c:if> to disable previous if on first pres --%>
-		<form action="button.do" method="post">
-			<button class=button name="term" value="${president.termNumber - 1}">previous</button>
-		</form>
 		<%-- </c:if> --%>
+	
+		<form action="button.do" method="post">
+			<c:choose>
+			<c:when test="${president.termNumber == 45}">
+			<button class=button name="term" value="${president.termNumber - 44}">next</button>
+			</c:when>
+			<c:otherwise>
+			<button class=button name="term" value="${president.termNumber + 1}">next</button>
+			</c:otherwise>
+			</c:choose>
+		</form>
+	
+		<form action="button.do" method="post">
+			<c:choose>
+			<c:when test="${president.termNumber == 1}">
+			<button class=button name="term" value="${president.termNumber + 44}">previous</button>
+			</c:when>
+			<c:otherwise>
+			<button class=button name="term" value="${president.termNumber - 1}">previous</button>
+			</c:otherwise>
+			</c:choose>
+		</form>
 	
 	</body>
 </html>
