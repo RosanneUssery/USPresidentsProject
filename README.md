@@ -11,6 +11,8 @@ Our goal was to  display a web page with information about a president. We were 
 
 We were to include the name, image, term number, party, and dates in office as well as an interesting piece of data about the president.
 
+This project allowed us to work with JSPs, servlets, Java, HTML, and CSS. It also allowed us to practice working collaboratively on GitHub and with pushing and pulling changes. 
+
 To use the website, enter the number of the president you would like information about or select using the up and down arrows.
 
 Challenges:
