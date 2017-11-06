@@ -44,53 +44,70 @@
 					value="submit">
 			</form>
 		</div>
-	
-	<div class="headBar">
-	<h1>${president.firstName} ${president.middleName} ${president.lastName} </h1>
-	
-	</div>
-	<div id="wrapper">
-		<c:if test="${not empty president.termNumber}">
-			<div id="sidebar">
-				<img src="${president.imageLocation}" />
-			</div>
-			<br>
-			<div id="content">
-				<h3>Term Start: ${president.termStart}</h3> <br>
-				<h3>Term End: ${president.termEnd}</h3><br>
-				<h3>Number of Elections Won: ${president.electionsWon}</h3> <br>
-				<h3>Reasons for leaving office: ${president.whyLeftOffice}</h3> <br>
-				<h3>Political Party: ${president.party}</h3> <br>
-				<h4>${president.funFact}</h4><br>
-			</div>
-				<form action="button.do" method="post">
-					<c:choose>
-						<c:when test="${president.termNumber == 45}">
-							<button class=button name="term"
-								value="${president.termNumber - 44}">next</button>
-						</c:when>
-						<c:otherwise>
-							<button class=button name="term"
-								value="${president.termNumber + 1}">next</button>
-						</c:otherwise>
-					</c:choose>
-				</form>
 
-				<form action="button.do" method="post">
-					<c:choose>
-						<c:when test="${president.termNumber == 1}">
-							<button class=button name="term"
-								value="${president.termNumber + 44}">previous</button>
-						</c:when>
-						<c:otherwise>
-							<button class=button name="term"
-								value="${president.termNumber - 1}">previous</button>
-						</c:otherwise>
-					</c:choose>
-				</form>
-		</c:if>
-		
+		<div class="headBar">
+			<h1>${president.firstName}${president.middleName}
+				${president.lastName}</h1>
+
+		</div>
+		<div id="wrapper">
+			<c:if test="${not empty president.termNumber}">
+				<br>
+				<div id="content">
+					<h3>Term Start: ${president.termStart}</h3>
+					<br>
+					<h3>Term End: ${president.termEnd}</h3>
+					<br>
+					<h3>Number of Elections Won: ${president.electionsWon}</h3>
+					<br>
+					<h3>Reasons for leaving office: ${president.whyLeftOffice}</h3>
+					<br>
+					<h3>Political Party: ${president.party}</h3>
+					<br>
+					<h4>${president.funFact}</h4>
+					<br>
+				</div>
+				<div id="sidebar">
+					<img src="${president.imageLocation}" />
+				</div>
+				<div class="cleared"></div>
+		</div>
+		<div class="wrapper">
+			<div class="content">
+				<div class="bottomNav">
+					<form action="button.do" method="post">
+						<c:choose>
+							<c:when test="${president.termNumber == 45}">
+								<button class=button name="term"
+									value="${president.termNumber - 44}">next</button>
+							</c:when>
+							<c:otherwise>
+								<button class=button name="term"
+									value="${president.termNumber + 1}">next</button>
+							</c:otherwise>
+						</c:choose>
+					</form>
+				</div>
+				<div class="sidebar">
+					<form action="button.do" method="post">
+						<c:choose>
+							<c:when test="${president.termNumber == 1}">
+								<button class=button name="term"
+									value="${president.termNumber + 44}">previous</button>
+							</c:when>
+							<c:otherwise>
+								<button class=button name="term"
+									value="${president.termNumber - 1}">previous</button>
+							</c:otherwise>
+						</c:choose>
+					</form>
+					</c:if>
+				</div>
+				<div class="cleared"></div>
+			</div>
+		</div>
 	</div>
 	</div>
+
 </body>
 </html>
