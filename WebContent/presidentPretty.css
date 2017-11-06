@@ -44,14 +44,14 @@ body, html {
 img {
 	border-radius: 100%;
 	position: center;
-	height: 500px;
+	height: 300px;
 	padding: 20px;
 }
 
 #wrapper {
 
   background-image: url("pictures/blank-parchment-aps.jpg");
-  height: 510px;
+  height: 320px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
