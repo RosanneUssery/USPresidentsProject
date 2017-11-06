@@ -73,6 +73,8 @@
 				</div>
 				<div class="cleared"></div>
 		</div>
+		</div>
+		<div class="container">
 		<div class="bottomNav">
 			<div class="wrapper">
 				<div class="content">
@@ -107,6 +109,7 @@
 				<div class="cleared"></div>
 			</div>
 			</c:if>
+		</div>
 		</div>
 	</div>
 	

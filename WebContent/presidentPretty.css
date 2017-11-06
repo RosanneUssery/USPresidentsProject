@@ -58,6 +58,7 @@ img {
 }
 #content {
   float: left;
+  word-wrap: break-word;
 }
 #sidebar {
   float: right;
