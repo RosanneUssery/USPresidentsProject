@@ -11,6 +11,8 @@ Our goal was to  display a web page with information about a president. We were 
 
 We were to include the name, image, term number, party, and dates in office as well as an interesting piece of data about the president.
 
+To use the website, enter the number of the president you would like information about or select using the up and down arrows.
+
 Challenges:
 Our greatest challenge was getting the backend coding correct to allow the servlet to pull information from the .txt file and work with the JSP to display the information.
 

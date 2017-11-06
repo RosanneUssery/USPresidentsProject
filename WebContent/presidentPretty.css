@@ -45,6 +45,7 @@ img {
 	border-radius: 100%;
 	position: center;
 	height: 500px;
+	padding: 20px;
 }
 
 #wrapper {

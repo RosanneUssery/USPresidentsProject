@@ -46,13 +46,14 @@
 		</div>
 
 		<div class="headBar">
-			<h1>${president.firstName}${president.middleName}
+			<h1>${president.firstName} ${president.middleName}
 				${president.lastName}</h1>
 
 		</div>
 		<div id="wrapper">
 			<c:if test="${not empty president.termNumber}">
 				<br>
+				
 				<div id="content">
 					<h3>Term Start: ${president.termStart}</h3>
 					<br>
@@ -72,9 +73,9 @@
 				</div>
 				<div class="cleared"></div>
 		</div>
-		<div class="wrapper">
-			<div class="content">
-				<div class="bottomNav">
+		<div class="bottomNav">
+			<div class="wrapper">
+				<div class="content">
 					<form action="button.do" method="post">
 						<c:choose>
 							<c:when test="${president.termNumber == 45}">
@@ -88,6 +89,7 @@
 						</c:choose>
 					</form>
 				</div>
+
 				<div class="sidebar">
 					<form action="button.do" method="post">
 						<c:choose>
@@ -101,13 +103,13 @@
 							</c:otherwise>
 						</c:choose>
 					</form>
-					</c:if>
 				</div>
 				<div class="cleared"></div>
 			</div>
+			</c:if>
 		</div>
 	</div>
-	</div>
+	
 
 </body>
 </html>
