@@ -31,9 +31,9 @@
 	<div class="parallax">
 		<!-- Image of WH goes here and title will scroll over it. -->
 	</div>
+	
 	<div class="container">
 		<div class="formBox">
-
 			<!--  input form box -->
 			<form action="selectPresident.do" method="post">
 				<br>
@@ -48,8 +48,8 @@
 		<div class="headBar">
 			<h1>${president.firstName} ${president.middleName}
 				${president.lastName}</h1>
-
 		</div>
+		
 		<div id="wrapper">
 			<c:if test="${not empty president.termNumber}">
 				<br>
@@ -65,7 +65,7 @@
 					<br>
 					<h3>Political Party: ${president.party}</h3>
 					<br>
-					<h4>${president.funFact}</h4>
+					<h3>Fun Fact: ${president.funFact}</h3>
 					<br>
 				</div>
 				<div id="sidebar">
@@ -110,9 +110,7 @@
 			</div>
 			</c:if>
 		</div>
-		</div>
 	</div>
-	
 
 </body>
 </html>
