@@ -47,31 +47,7 @@
 	
 	<div class="headBar">
 	<h1>${president.firstName} ${president.middleName} ${president.lastName} </h1>
-					<form action="button.do" method="post">
-					<c:choose>
-						<c:when test="${president.termNumber == 45}">
-							<button class=button name="term"
-								value="${president.termNumber - 44}">next</button>
-						</c:when>
-						<c:otherwise>
-							<button class=button name="term"
-								value="${president.termNumber + 1}">next</button>
-						</c:otherwise>
-					</c:choose>
-				</form>
-
-				<form action="button.do" method="post">
-					<c:choose>
-						<c:when test="${president.termNumber == 1}">
-							<button class=button name="term"
-								value="${president.termNumber + 44}">previous</button>
-						</c:when>
-						<c:otherwise>
-							<button class=button name="term"
-								value="${president.termNumber - 1}">previous</button>
-						</c:otherwise>
-					</c:choose>
-				</form>
+	
 	</div>
 	<div id="wrapper">
 		<c:if test="${not empty president.termNumber}">
